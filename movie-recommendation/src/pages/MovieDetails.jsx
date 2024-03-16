@@ -180,7 +180,7 @@ const MovieDetails = () => {
               <div className="flex flex-col">
                 <div className="grid grid-flow-col auto-cols-max gap-4 ">
                   <p className="text-cyan-600 text-sm md:text-base">
-                    Released: {movieData?.release_date}{" "}
+                    Released: {movieData?.release_date}
                   </p>
                   <p className="text-cyan-600 text-sm md:text-base">
                     {movieData?.runtime} min
@@ -198,7 +198,7 @@ const MovieDetails = () => {
               </div>
             </div>
 
-            <p className="text-gray-300 mb-8">{movieData.overview} </p>
+            <p className="text-gray-300 mb-8 font-mono">{movieData.overview} </p>
             <div className="flex flex-row items-center ">
               <button
                 onClick={() => setShowModal(true)}
