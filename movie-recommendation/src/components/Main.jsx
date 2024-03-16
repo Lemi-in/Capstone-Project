@@ -47,13 +47,11 @@ const Main = (props) => {
   };
 
   return (
-    <div className="w-full h-[70vh] md:h-[600px] text-[#FFFDE3]">
+    <div className="w-full h-[vh] md:h-[600px] text-[#FFFDE3]">
       <div className="w-full h-full">
-        <div className="absolute w-full h-[70vh] md:h-[600px] bg-gradient-to-r from-black">
-          {" "}
-        </div>
+        <div className="absolute w-full h-[70vh] md:h-[600px] bg-gradient-to-r from-black"></div>
         <img
-          className="w-full h-[70vh] md:h-full object-cover"
+          className="w-full mt-[1%] md:h-full object-cover"
           src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
           alt=""
         />
@@ -70,11 +68,11 @@ const Main = (props) => {
               Watch Later
             </button>
           </div>
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-sm font-mono">
             Released: {movie?.release_date}{" "}
           </p>
 
-          <p className="w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-[50%] text-gray-200 text-sm md:text-base mt-2">
+          <p className="w-full sm:max-w-[80%] font-mono md:max-w-[70%] lg:max-w-[50%] text-gray-200 text-sm md:text-base mt-2">
             <ReadMore>{movie?.overview}</ReadMore>
           </p>
         </div>
