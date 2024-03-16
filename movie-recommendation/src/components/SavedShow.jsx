@@ -12,7 +12,7 @@ const SavedShow = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const docRef = doc(db, 'users', user?.id); // Removed unnecessary string interpolation
+                const docRef = doc(db, 'users', user?.email);
                 const unsubscribe = onSnapshot(docRef, (doc) => {
                     setMovies(doc.data()?.savedShows || []);
                 });
@@ -31,17 +31,9 @@ const SavedShow = () => {
             await updateDoc(movieRef, {
                 savedShows: updatedMovies // Updated to use updatedMovies
             });
+            setMovies(updatedMovies); // Update local state
         } catch (error) {
             console.log("Error deleting show:", error);
-        }
-    };
-
-    const handleSaveShow = async (showData) => {
-        try {
-            await saveShow(user?.email, showData);
-            console.log("Show saved successfully!");
-        } catch (error) {
-            console.error("Error saving show:", error);
         }
     };
 
@@ -49,7 +41,7 @@ const SavedShow = () => {
         <div>
             <div className="mx-auto max-w-2xl py-10 px-2 sm:py-10 sm:px-6 lg:max-w-7xl">
                 <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-                    {movies.map((item) => ( // Removed unnecessary index parameter
+                    {movies.map((item) => (
                         <div key={item.id} className="inline-block cursor-pointer relative ">
                             <img
                                 className="w-full h-auto block"
@@ -57,7 +49,7 @@ const SavedShow = () => {
                                 alt=""
                             />
                             <div className="absolute top-0 left-0 w-full h-full hover:bg-black/60 opacity-0 hover:opacity-100 text-white">
-                                <p onClick={() => deleteShow(item.id)} className="absolute text-gray-300 top-4 right-4"><AiOutlineClose/></p>
+                                <button onClick={() => deleteShow(item.id)} className="absolute text-gray-300 top-4 right-4"><AiOutlineClose /></button>
                             </div>
                         </div>
                     ))}
