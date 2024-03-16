@@ -141,7 +141,7 @@ const MovieDetails = () => {
               </div>
             </div>
           </div>
-          <div className="opacity-50 fixed inset-0 z-40 bg-black"></div>
+          {/* <div className="opacity-50 fixed inset-0 z-40 bg-black"></div> */}
 
         </>
       ) : null}
@@ -154,7 +154,7 @@ const MovieDetails = () => {
           src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path || movieData.poster_path
             }`}
           alt=""
-          className="w-full h-[70vh] object-cover "
+          className="w-full h-[90vh] object-cover "
         />
       </div>
       <div className="flex justify-center ">
