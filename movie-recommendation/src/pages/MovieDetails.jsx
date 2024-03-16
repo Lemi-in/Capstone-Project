@@ -103,7 +103,7 @@ const MovieDetails = () => {
     };
 
   return (
-    <div className=" h-[90vh]">
+    <div className="">
       {showModal ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden 
