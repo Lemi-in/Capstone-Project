@@ -96,12 +96,12 @@ const Navbar = () => {
       ) : (
         <div>
           <Link to="/signIn">
-            <button className="text-[#FFFDE3] pr-4 
-              hover:text-xl hover:text-yellow-600 ">Sign In</button>
-          </Link>
+          <button className="text-[#FFFDE3] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-500 to-indigo-800 hover:from-purple-600 hover:to-indigo-600 hover:text-black shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+              Sign In
+            </button>
+            </Link>
           <Link to="/signUp">
-            <button className="text-[#FFFDE3] px-6 py-2 
-              rounded cursor-pointer bg-cyan-600 hover:text-xl  ">
+          <button className="text-[#050502] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-800 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 hover:text-white shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
               Sign Up
             </button>
           </Link>
