@@ -157,16 +157,16 @@ const MovieDetails = () => {
         />
       </div>
       <div className="flex justify-center ">
-        <div className="flex flex-col items-center md:flex-row absolute xl:max-w-4xl md:mt-[-300px] mt-[-200px] text-white ">
-          <div className=" lg:w-[30%] h-auto md:h-[400px] w-[70%] ">
+        <div className="flex flex-col items-center md:flex-row absolute xl:max-w-4xl md:mt-[-600px] mt-[-200px] text-white ">
+          <div className=" lg:w-[80%] h-auto md:h-[800px] w-[80%] ">
             <img
-              className="w-full object-cover rounded-md"
+              className="w-full object-cover rounded-md  "
               src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
               alt=""
             />
           </div>
-          <div className="float-left  mb-[30%]  ">
-            <p className="text-3xl md:text-xl   md:mb-[50%]">
+          <div className="float-left  mb-[30%] ml-5 mt-[-200px] ">
+            <p className="text-3xl md:text-xl   md:mb-[1%]">
               {movieData.title || movieData.original_title}{" "}
             </p>
             <div className="flex flex-row items-center ">
