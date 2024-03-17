@@ -1,18 +1,32 @@
 import React from 'react';
-import './foot.css'
-import telegarm from '../images/telegram.png'
-import Instagram from '../images/instagram.png'
-import email from '../images/email.png'
-import linkedin from '../images/linkedin.png'
+import email from '../images/email.png';
+import linkedin from '../images/linkedin.png';
+import Instagram from '../images/instagram.png';
+import telegarm from '../images/telegram.png';
+import  '../components/foot.css'
+
 const Footer = () => {
   return (
-    <footer className=" flex bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4">
-         
-           {/* <li><img src={email} alt="" /><a href="#" className='fo'>Email</a></li>
-           <li><img src={linkedin} alt="" /><a href="#" className='fo'>linkedin</a></li> 
-           <li><img src={Instagram} alt="" /><a href="#" className='fo'>Instagram</a></li> 
-           <li><img src={telegarm} alt="" /><a href="#" className='fo'>Telegram</a></li>  */}
-        <h6 className='flex items-center justify-center h-full ml-[50%]'>Copyright &copy Group one 2024 </h6>
+    <footer className=" justify-between  bg-gray-800 text-white py-4 sm:flex-row">
+      {/* <ul>
+        <li>
+          <img src={email} alt="Email" className="w-8 h-8" />
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>Email</a>
+        </li>
+        <li>
+          <img src={linkedin} alt="LinkedIn" className="w-8 h-8" />
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>LinkedIn</a>
+        </li>
+        <li>
+          <img src={Instagram} alt="Instagram" className="w-8 h-8" />
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>Instagram</a>
+        </li>
+        <li>
+          <img src={telegarm} alt="Telegram" className="w-8 h-8" />
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>Telegram</a>
+        </li>
+      </ul> */}
+      <h6 >&copy; Group one 2024</h6>
     </footer>
   );
 };

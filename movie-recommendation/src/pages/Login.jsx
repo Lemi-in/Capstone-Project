@@ -58,7 +58,7 @@ const Login = () => {
                 </button>
                 <p className="py-8">
                   <span className="text-orange-600 ml-4 text-xl hover:text-white">New to cinema Ras?</span>{" "}
-                  <Link to="/signUp" className="ml-4 text-xl hover:text-yellow-600">Sign Up</Link>
+                  <Link to="/signUp" className="ml-4 text-xl hover:text-yellow-600 hover:text-xl ">Sign Up</Link>
                 </p>
               </form>
             </div>

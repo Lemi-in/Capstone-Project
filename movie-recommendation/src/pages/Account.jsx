@@ -1,8 +1,8 @@
+import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { UserAuth } from "../context/AuthContext";
 import { db } from "../Firebase";
-import { onSnapshot, doc } from "firebase/firestore";
 import Movie from "../components/Movie";
+import { UserAuth } from "../context/AuthContext";
 
 const Account = () => {
   const [savedShows, setSavedShows] = useState([]);
@@ -22,6 +22,18 @@ const Account = () => {
       return () => unsubscribe();
     }
   }, [user?.email]);
+
+  const removeMovie = async (showId) => {
+    try {
+      const userDocRef = doc(db, "users", `${user.email}`);
+      await updateDoc(userDocRef, {
+        savedShows: savedShows.filter(show => show.id !== showId)
+      });
+    } catch (error) {
+      console.error("Error removing movie: ", error);
+    }
+  };
+  
 
   return (
     <div>
@@ -44,6 +56,13 @@ const Account = () => {
             {savedShows.map((show, index) => (
               <div key={show.id} className="relative movie-item">
                 <Movie item={show} genre="movie" />
+
+                <button
+                  className="absolute top-2 right-2 text-white bg-red-500 rounded-full w-6 h-6 flex items-center justify-center"
+                  onClick={() => removeMovie(show.id)}
+                >
+                  X
+                </button>
               </div>
             ))}
           </div>

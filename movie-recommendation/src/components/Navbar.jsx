@@ -37,10 +37,10 @@ const Navbar = () => {
 
   return (
     <div className="flex items-center justify-between p-2 z-[100] w-full 
-      absolute backdrop-filter backdrop-blur-lg  bg-opacity-50 bg-gray-900">
+      absolute backdrop-filter backdrop-blur-lg bg-opacity-50 bg-gray-900 md:shrink-0">
      <div className="top-0 h-10 mt-[-20px]">
             <Link to="/">
-              <img className="h-12 w-40 hover:bg-neutral-50 bg-red-400" src={Logo} alt="Logo" />
+              <img className="h-12 w-40 hover:bg-red-200 bg-white" src={Logo} alt="Logo" />
             </Link>
           </div>
       <div className="flex">
@@ -94,14 +94,14 @@ const Navbar = () => {
           </button>
         </div>
       ) : (
-        <div>
+        <div className="flex space-x-5 ">
           <Link to="/signIn">
-            <button className="text-[#FFFDE3] pr-4 
-              hover:text-xl hover:text-yellow-600 ">Sign In</button>
-          </Link>
+          <button className="text-[#FFFDE3] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-500 to-indigo-800 hover:from-purple-600 hover:to-yellow-600 hover:text-black shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+              Sign In
+            </button>
+            </Link>
           <Link to="/signUp">
-            <button className="text-[#FFFDE3] px-6 py-2 
-              rounded cursor-pointer bg-cyan-600 hover:text-xl  ">
+          <button className="text-[#050502] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-800 to-indigo-500 hover:from-purple-600 hover:to-violet hover:text-white shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
               Sign Up
             </button>
           </Link>
