@@ -103,7 +103,7 @@ const MovieDetails = () => {
     };
 
   return (
-    <div className=" h-[90vh]">
+    <div className="">
       {showModal ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden 
@@ -141,7 +141,7 @@ const MovieDetails = () => {
               </div>
             </div>
           </div>
-          <div className="opacity-50 fixed inset-0 z-40 bg-black"></div>
+          {/* <div className="opacity-50 fixed inset-0 z-40 bg-black"></div> */}
 
         </>
       ) : null}
@@ -154,7 +154,7 @@ const MovieDetails = () => {
           src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path || movieData.poster_path
             }`}
           alt=""
-          className="w-full h-[70vh] object-cover "
+          className="w-full h-[90vh] object-cover "
         />
       </div>
       <div className="flex justify-center ">
@@ -180,7 +180,7 @@ const MovieDetails = () => {
               <div className="flex flex-col">
                 <div className="grid grid-flow-col auto-cols-max gap-4 ">
                   <p className="text-cyan-600 text-sm md:text-base">
-                    Released: {movieData?.release_date}{" "}
+                    Released: {movieData?.release_date}
                   </p>
                   <p className="text-cyan-600 text-sm md:text-base">
                     {movieData?.runtime} min
@@ -198,7 +198,7 @@ const MovieDetails = () => {
               </div>
             </div>
 
-            <p className="text-gray-300 mb-8">{movieData.overview} </p>
+            <p className="text-gray-300 mb-8 font-mono">{movieData.overview} </p>
             <div className="flex flex-row items-center ">
               <button
                 onClick={() => setShowModal(true)}

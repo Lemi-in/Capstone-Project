@@ -40,7 +40,7 @@ const Navbar = () => {
       absolute backdrop-filter backdrop-blur-lg bg-opacity-50 bg-gray-900">
      <div className="top-0 h-10 mt-[-20px]">
             <Link to="/">
-              <img className="h-8 w-40 hover:bg-neutral-50 bg-red-400" src={Logo} alt="Logo" />
+              <img className="h-12 w-40 hover:bg-neutral-50 bg-red-400" src={Logo} alt="Logo" />
             </Link>
           </div>
       <div className="flex">
@@ -51,7 +51,7 @@ const Navbar = () => {
               name="search"
               autoComplete="off"
               id="search-navbar"
-              className="block w-full p-2 text-sm text-gray-900 border-b border-gray-300 bg-transparent  
+              className="block w-full p-2 text-sm text-white border-b border-gray-300 bg-transparent  
               dark:text-white dark:border-gray-600 dark:bg-transparent dark:placeholder-gray-400"
               placeholder="Search..."
               value={searchValue}
