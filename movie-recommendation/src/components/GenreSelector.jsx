@@ -8,7 +8,7 @@ const GenreSelector = ({ genres }) => {
 
   useEffect(() => {
     if (genres.length > 0) {
-      setSelectedGenre(genres[0].id);
+      setSelectedGenre(genres[0]?.id);
       setIsLoading(false);
     }
   }, [genres]);
@@ -19,11 +19,13 @@ const GenreSelector = ({ genres }) => {
 
   return (
     <div>
+      {isLoading ? (
+        <p>Loading genres...</p>
+      ) : (
         <>
           <div className="genre-buttons">
             {genres.map((genre) => (
               <button
-                
                 key={genre.id}
                 className={selectedGenre === genre.id ? "active" : ""}
                 onClick={() => handleGenreChange(genre.id)}
@@ -39,7 +41,7 @@ const GenreSelector = ({ genres }) => {
             />
           )}
         </>
-      
+      )}
     </div>
   );
 };
