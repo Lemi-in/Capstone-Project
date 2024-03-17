@@ -108,7 +108,7 @@ const MovieDetails = () => {
         <>
           <div className="justify-center items-center flex overflow-x-hidden 
               overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+            <div className="relative w-auto my-6 mx-auto m">
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex 
                   flex-col w-full bg-transparent outline-none focus:outline-none">
@@ -147,27 +147,26 @@ const MovieDetails = () => {
       ) : null}
 
       <div className="">
-        <div className="absolute w-full h-[70vh] bg-gradient-to-t from-black ">
-          {" "}
+        <div className="absolute w-full md:flex  bg-gradient-to-t from-black ">
         </div>
         <img
           src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path || movieData.poster_path
             }`}
           alt=""
-          className="w-full blur-md object-cover "
+          className="w-full h-50 blur-md object-cover "
         />
       </div>
       <div className="flex justify-center ">
-        <div className="flex flex-col items-center md:flex-row md:max-w-2xl lg:max-w-3xl absolute xl:max-w-4xl md:mt-[-300px] mt-[-200px] text-white ">
+        <div className="flex flex-col items-center md:flex-row absolute xl:max-w-4xl md:mt-[-300px] mt-[-200px] text-white ">
           <div className=" lg:w-[30%] h-auto md:h-[400px] w-[70%] ">
             <img
-              className="w-[100%] h-full md:h-auto object-cover rounded-md"
+              className="w-full object-cover rounded-md"
               src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
               alt=""
             />
           </div>
-          <div className="float-left w-[70%] md:pl-12 ">
-            <p className="text-3xl md:text-5xl mb-3 mt-3 md:mt-0">
+          <div className="float-left  mb-[30%]  ">
+            <p className="text-3xl md:text-xl   md:mb-[50%]">
               {movieData.title || movieData.original_title}{" "}
             </p>
             <div className="flex flex-row items-center ">
@@ -179,10 +178,10 @@ const MovieDetails = () => {
               </div>
               <div className="flex flex-col">
                 <div className="grid grid-flow-col auto-cols-max gap-4 ">
-                  <p className="text-cyan-600 text-sm md:text-base">
+                  <p className="text-sm md:text-base">
                     Released: {movieData?.release_date}
                   </p>
-                  <p className="text-cyan-600 text-sm md:text-base">
+                  <p className="text-sm md:text-base">
                     {movieData?.runtime} min
                   </p>
                 </div>

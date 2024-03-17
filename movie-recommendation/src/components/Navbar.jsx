@@ -37,10 +37,10 @@ const Navbar = () => {
 
   return (
     <div className="flex items-center justify-between p-2 z-[100] w-full 
-      absolute backdrop-filter backdrop-blur-lg bg-opacity-50 bg-gray-900">
+      absolute backdrop-filter backdrop-blur-lg bg-opacity-50 bg-gray-900 md:shrink-0">
      <div className="top-0 h-10 mt-[-20px]">
             <Link to="/">
-              <img className="h-12 w-40 hover:bg-neutral-50 bg-red-400" src={Logo} alt="Logo" />
+              <img className="h-12 w-40 hover:bg-red-200 bg-white" src={Logo} alt="Logo" />
             </Link>
           </div>
       <div className="flex">

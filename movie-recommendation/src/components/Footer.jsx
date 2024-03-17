@@ -7,8 +7,8 @@ import  '../components/foot.css'
 
 const Footer = () => {
   return (
-    <footer className=" justify-between bg-gray-800 text-white py-4">
-      <ul>
+    <footer className=" justify-between  bg-gray-800 text-white py-4 sm:flex-row">
+      {/* <ul>
         <li>
           <img src={email} alt="Email" className="w-8 h-8" />
           <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>Email</a>
@@ -25,7 +25,7 @@ const Footer = () => {
           <img src={telegarm} alt="Telegram" className="w-8 h-8" />
           <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>Telegram</a>
         </li>
-      </ul>
+      </ul> */}
       <h6 >&copy; Group one 2024</h6>
     </footer>
   );
