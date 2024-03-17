@@ -11,19 +11,19 @@ const Footer = () => {
       <ul>
         <li>
           <img src={email} alt="Email" className="w-6 h-6" />
-          <a href="#" className="text-gray-300 hover:text-white ml-1">Email</a>
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1">Email</a>
         </li>
         <li>
           <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />
-          <a href="#" className="text-gray-300 hover:text-white ml-1">LinkedIn</a>
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1">LinkedIn</a>
         </li>
         <li>
           <img src={Instagram} alt="Instagram" className="w-6 h-6" />
-          <a href="#" className="text-gray-300 hover:text-white ml-1">Instagram</a>
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1">Instagram</a>
         </li>
         <li>
           <img src={telegarm} alt="Telegram" className="w-6 h-6" />
-          <a href="#" className="text-gray-300 hover:text-white ml-1">Telegram</a>
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1">Telegram</a>
         </li>
       </ul>
       <h6 >&copy; Group one 2024</h6>
