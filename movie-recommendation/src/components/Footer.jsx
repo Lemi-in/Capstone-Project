@@ -10,20 +10,20 @@ const Footer = () => {
     <footer className=" justify-between bg-gray-800 text-white py-4">
       <ul>
         <li>
-          <img src={email} alt="Email" className="w-6 h-6" />
-          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1">Email</a>
+          <img src={email} alt="Email" className="w-8 h-8" />
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>Email</a>
         </li>
         <li>
-          <img src={linkedin} alt="LinkedIn" className="w-6 h-6" />
-          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1">LinkedIn</a>
+          <img src={linkedin} alt="LinkedIn" className="w-8 h-8" />
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>LinkedIn</a>
         </li>
         <li>
-          <img src={Instagram} alt="Instagram" className="w-6 h-6" />
-          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1">Instagram</a>
+          <img src={Instagram} alt="Instagram" className="w-8 h-8" />
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>Instagram</a>
         </li>
         <li>
-          <img src={telegarm} alt="Telegram" className="w-6 h-6" />
-          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1">Telegram</a>
+          <img src={telegarm} alt="Telegram" className="w-8 h-8" />
+          <a href="#" className="text-gray-300 hover:bg-teal-400 ml-1" id='fo'>Telegram</a>
         </li>
       </ul>
       <h6 >&copy; Group one 2024</h6>
