@@ -156,7 +156,7 @@ const MovieDetails = () => {
         />
       </div>
       <div className="flex justify-center ">
-        <div className="flex flex-col items-center md:flex-row absolute xl:max-w-4xl md:mt-[-600px] mt-[-200px] text-white ">
+        <div className="flex flex-col items-center md:flex-row absolute xl:max-w-4xl md:mt-[-360px]  text-white ">
           <div className=" lg:w-[80%] h-auto md:h-[800px] w-[80%] ">
             <img
               className="w-full object-cover rounded-md  "
