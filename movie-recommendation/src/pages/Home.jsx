@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Main from "../components/Main";
 import Row from "../components/Row";
-import GenreSelector from "../components/GenreSelector";
 import requests from "../Requests";
 
 const Home = () => {
@@ -31,7 +30,6 @@ const Home = () => {
         <div className="loading-spinner">Loading...</div>
       ) : (
         <>
-          <GenreSelector genres={genres} />
           <Main genre="popular" />
           <Row title="UpComing" fetchURL={requests.requestUpcoming} rowID='1' genre="upcoming" />
           <Row title="Popular" fetchURL={requests.requestPopular} rowID='2' genre="popular" />
