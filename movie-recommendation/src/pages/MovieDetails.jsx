@@ -17,7 +17,7 @@ import { saveShow } from "../firestoreUtils"; // Import the saveShow function
 const MovieDetails = () => {
   const params = useParams();
   const key = process.env.REACT_APP_IMDB_API_KEY;
-
+  const [layout, setLayout] = useState("grid");
   const [movieData, setMovieData] = useState({
     info: [],
     liked: false
@@ -30,7 +30,6 @@ const MovieDetails = () => {
   const [favorite, setFavorite] = useState(false)
 
   const movieID = doc(db, 'users', `${user?.email}`);
-  //const [playing, setPlaying] = useState(false);
   // https://api.themoviedb.org/3/movie/now_playing?api_key=d9a2926d310b627aa44739b657eac1e2&language=en-US&page=1
   const url = `https://api.themoviedb.org/3/movie/${params.movieId}?api_key=d9a2926d310b627aa44739b657eac1e2&append_to_response=videos`;
   useEffect(() => {
@@ -102,6 +101,24 @@ const MovieDetails = () => {
   
     };
 
+    useEffect(() => {
+      const checkScreenSize = () => {
+        if (window.innerWidth < 768) {
+          setLayout("list");
+        } else {
+          setLayout("grid");
+        }
+      };
+  
+      checkScreenSize();
+  
+      window.addEventListener("resize", checkScreenSize);
+  
+      return () => {
+        window.removeEventListener("resize", checkScreenSize);
+      };
+    }, []);
+
   return (
     <div className="">
       {showModal ? (
@@ -141,7 +158,7 @@ const MovieDetails = () => {
               </div>
             </div>
           </div>
-          {/* <div className="opacity-50 fixed inset-0 z-40 bg-black"></div> */}
+          
 
         </>
       ) : null}
@@ -157,16 +174,16 @@ const MovieDetails = () => {
         />
       </div>
       <div className="flex justify-center ">
-        <div className="flex flex-col items-center md:flex-row absolute xl:max-w-4xl md:mt-[-300px] mt-[-200px] text-white ">
-          <div className=" lg:w-[30%] h-auto md:h-[400px] w-[70%] ">
+        <div className="flex flex-col items-center md:flex-row absolute xl:max-w-4xl md:mt-[-360px]  text-white ">
+          <div className=" lg:w-[80%] h-auto md:h-[800px] w-[80%] ">
             <img
-              className="w-full object-cover rounded-md"
+              className="w-full object-cover rounded-md  "
               src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
               alt=""
             />
           </div>
-          <div className="float-left  mb-[30%]  ">
-            <p className="text-3xl md:text-xl   md:mb-[50%]">
+          <div className="float-left  mb-[30%] ml-5 mt-[-200px] ">
+            <p className="text-3xl md:text-xl   md:mb-[1%]">
               {movieData.title || movieData.original_title}{" "}
             </p>
             <div className="flex flex-row items-center ">

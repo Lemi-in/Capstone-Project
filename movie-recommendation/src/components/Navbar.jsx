@@ -49,7 +49,7 @@ const Navbar = () => {
             <input
               type="text"
               name="search"
-              autoComplete="off"
+             autoComplete="off"
               id="search-navbar"
               className="block w-full p-2 text-sm text-white border-b border-gray-300 bg-transparent  
               dark:text-white dark:border-gray-600 dark:bg-transparent dark:placeholder-gray-400"
@@ -79,34 +79,38 @@ const Navbar = () => {
           </button>
         )}
       </div>
-      {user?.email ? (
-        <div>
-          <Link to="/account">
-            <button className="text-[#FFFDE3] pr-4">Account</button>
-          </Link>
+      <div className="flex items-center space-x-5 ">
+        {user?.email ? (
+          <>
+            <Link to="/account">
+            <button style={{ height: "32px", lineHeight: "2px", paddingBottom: "70px" }} className="text-[#FFFDE3] px-3 py-1 rounded cursor-pointer bg-transparent-bg text-sm">
+              Account
+</button>
 
-          <button
-            onClick={handleLogOut}
-            className="text-[#FFFDE3] px-6 py-2 rounded 
-            cursor-pointer bg-[#00204a] "
-          >
-            Logout
-          </button>
-        </div>
-      ) : (
-        <div className="flex space-x-5 ">
-          <Link to="/signIn">
-          <button className="text-[#FFFDE3] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-500 to-indigo-800 hover:from-purple-600 hover:to-yellow-600 hover:text-black shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
-              Sign In
-            </button>
             </Link>
-          <Link to="/signUp">
-          <button className="text-[#050502] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-800 to-indigo-500 hover:from-purple-600 hover:to-violet hover:text-white shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
-              Sign Up
+            <button
+              onClick={handleLogOut}
+              style={{ height: "32px", lineHeight: "32px" }}
+              className="text-[#FFFDE3] px-3 py-1 rounded cursor-pointer bg-[#00204a] text-sm"
+            >
+              Logout
             </button>
-          </Link>
-        </div>
-      )}
+          </>
+        ) : (
+          <>
+            <Link to="/signIn">
+              <button className="text-[#FFFDE3] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-500 to-indigo-800 hover:from-purple-600 hover:to-yellow-600 hover:text-black shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+                Sign In
+              </button>
+            </Link>
+            <Link to="/signUp">
+              <button className="text-[#050502] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-800 to-indigo-500 hover:from-purple-600 hover:to-violet hover:text-white shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+                Sign Up
+              </button>
+            </Link>
+          </>
+        )}
+      </div>
     </div>
   );
 };
