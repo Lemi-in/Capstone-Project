@@ -30,7 +30,6 @@ const MovieDetails = () => {
   const [favorite, setFavorite] = useState(false)
 
   const movieID = doc(db, 'users', `${user?.email}`);
-  //const [playing, setPlaying] = useState(false);
   // https://api.themoviedb.org/3/movie/now_playing?api_key=d9a2926d310b627aa44739b657eac1e2&language=en-US&page=1
   const url = `https://api.themoviedb.org/3/movie/${params.movieId}?api_key=d9a2926d310b627aa44739b657eac1e2&append_to_response=videos`;
   useEffect(() => {
@@ -141,7 +140,7 @@ const MovieDetails = () => {
               </div>
             </div>
           </div>
-          {/* <div className="opacity-50 fixed inset-0 z-40 bg-black"></div> */}
+          
 
         </>
       ) : null}
