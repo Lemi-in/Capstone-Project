@@ -35,41 +35,35 @@ h3{
     margin-right: 18px;
 }
 
-  @media (max-width: 768px) {
-    .ul {
-      display: block;
+  @media (max-width: 500px) {
+    li {
+      display:block;
       color: aliceblue;
       list-style-type: none;
     }
     
-    .ul li {
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
+   
   
-    .ul li img {
-      margin-right: 5px;
-    }
-  
-    .fo {
-      font-size: 15px;
-      text-decoration: none;
-      color: inherit;
-    }
+    #fo{
+      color: aliceblue;
+      margin-left: 45px;
+     margin-top: 30px;
+  }
   }
   
   @media (min-width: 1200px) {
-    .ul{
+    ul{
         display: flex;
         color: aliceblue;
         list-style-type: none;
         
     }
-    .fo {
-        display: inline-flex;
-        font-size: 18px;
-    }
+    #fo{
+      color: aliceblue;
+      margin-top: 10px;
+      margin-left: -4px;
+      margin-right: 18px;
+  }
   }
 img {
     margin-right: 20px;
