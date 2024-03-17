@@ -154,7 +154,7 @@ const MovieDetails = () => {
           src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path || movieData.poster_path
             }`}
           alt=""
-          className="w-full h-[90vh] object-cover "
+          className="w-full blur-md object-cover "
         />
       </div>
       <div className="flex justify-center ">
@@ -197,8 +197,9 @@ const MovieDetails = () => {
                 </div>
               </div>
             </div>
-
-            <p className="text-gray-300 mb-8 font-mono">{movieData.overview} </p>
+            <div className="backdrop-blur-md">
+            <p className="text-white mb-8 font-mono">{movieData.overview} </p>
+            </div>
             <div className="flex flex-row items-center ">
               <button
                 onClick={() => setShowModal(true)}

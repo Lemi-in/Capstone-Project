@@ -94,14 +94,14 @@ const Navbar = () => {
           </button>
         </div>
       ) : (
-        <div>
+        <div className="flex space-x-5 ">
           <Link to="/signIn">
-          <button className="text-[#FFFDE3] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-500 to-indigo-800 hover:from-purple-600 hover:to-indigo-600 hover:text-black shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+          <button className="text-[#FFFDE3] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-500 to-indigo-800 hover:from-purple-600 hover:to-yellow-600 hover:text-black shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
               Sign In
             </button>
             </Link>
           <Link to="/signUp">
-          <button className="text-[#050502] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-800 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 hover:text-white shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+          <button className="text-[#050502] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-800 to-indigo-500 hover:from-purple-600 hover:to-violet hover:text-white shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
               Sign Up
             </button>
           </Link>

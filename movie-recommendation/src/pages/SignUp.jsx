@@ -62,10 +62,10 @@ const SignUp = () => {
                   Sign Up
                 </button>
                 <p className="py-8">
-                  <span className=" text-blue-400 font-mono  ">
+                  <span className=" text-yellow-400 font-mono  ">
                     Already subscribed to cinema Ras?
                   </span>{" "}
-                  <Link to="/signIn" className="ml-[45%]  text-blue-200 hover:text-blue-500 hover:text-xl ">Sign In</Link>
+                  <Link to="/signIn" className="ml-[45%] text-blue-200 hover:text-green-500 hover:text-xl ">Sign In</Link>
                 </p>
               </form>
             </div>
