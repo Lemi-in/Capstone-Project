@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
@@ -6,18 +6,21 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // Loading state
   const { user, logIn } = UserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setIsLoading(true); // Set loading state to true
     try {
       await logIn(email, password);
       navigate("/");
     } catch (error) {
       console.log(error);
       setError(error.message);
+      setIsLoading(false); // Reset loading state
     }
   };
 
@@ -54,7 +57,7 @@ const Login = () => {
                   minLength="6"
                 />
                 <button className="bg-cyan-600 py-3 my-6 rounded-r-full font-bold hover:bg-yellow-600">
-                  Sign In
+                  {isLoading ? "Signing In..." : "Sign In"}
                 </button>
                 <p className="py-8">
                   <span className="text-orange-600 ml-4 text-xl hover:text-white">New to cinema Ras?</span>{" "}

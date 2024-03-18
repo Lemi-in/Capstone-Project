@@ -1,26 +1,30 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
-import validator from "validator";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [errorMessage, setErrorMessage] = useState(""); // Error message state
   const { user, signUp } = UserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-      try {
-        await signUp(email, password);
-        navigate("/");
-      } catch (error) {
-        console.log(error);
+    setIsLoading(true); // Set loading state to true
+    try {
+      await signUp(email, password);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false); // Reset loading state
+      if (error.code === "auth/email-already-in-use") {
+        setErrorMessage("Account already in use. Please sign in instead.");
+      } else {
+        setErrorMessage(error.message);
       }
-    
-    
+    }
   };
 
   return (
@@ -36,10 +40,8 @@ const SignUp = () => {
           <div className="max-w-[450px] h-[600px] mx-auto bg-black/75 text-white">
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="text-3xl font-bold">Sign Up</h1>
-              <form
-                onSubmit={handleSubmit}
-                className="w-full flex flex-col py-4"
-              >
+              {errorMessage && <p className="p-3 bg-red-500 my-2">{errorMessage}</p>}
+              <form onSubmit={handleSubmit} className="w-full flex flex-col py-4">
                 <input
                   className="p-3 my-2 bg-gray-700 rounded-full hover:bg-yellow-400"
                   type="email"
@@ -59,7 +61,7 @@ const SignUp = () => {
                   minLength="6"
                 />
                 <button className="bg-cyan-600 py-3 my-6 rounded-l-full text-mono  hover:bg-orange-400 font-bold">
-                  Sign Up
+                  {isLoading ? "Creating Your Account..." : "Sign Up"}
                 </button>
                 <p className="py-8">
                   <span className=" text-yellow-400 font-mono  ">
