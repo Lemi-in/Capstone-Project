@@ -36,11 +36,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between p-2 z-[100] w-full 
+    <div className="flex items-center justify-between  z-[100] w-full
       absolute backdrop-filter backdrop-blur-lg bg-opacity-50 bg-gray-900 md:shrink-0">
-     <div className="top-0 h-10 mt-[-20px]">
+     <div className="top-0 h-10 mt-[1px]">
             <Link to="/">
-              <img className="h-12 w-40 hover:bg-red-200 bg-white" src={Logo} alt="Logo" />
+              <img className="h-12 w-40 mt-[-30px] hover:bg-red-200 bg-white" src={Logo} alt="Logo" />
             </Link>
           </div>
       <div className="flex">
@@ -64,7 +64,7 @@ const Navbar = () => {
               <FaSearch className="text-white" />
             </button>
             <button
-              className="absolute top-1/2 right-[-32px] transform -translate-y-1/2 p-2"
+              className="absolute top-1/2 right-[-32px] transform -translate-y-1/2 "
               onClick={handleSearchFormClose}
             >
               <span className="text-white">X</span>
@@ -79,18 +79,25 @@ const Navbar = () => {
           </button>
         )}
       </div>
-      <div className="flex items-center space-x-5 ">
+      <div className="flex items-center justify-center space-x-5 ">
         {user?.email ? (
           <>
-            <Link to="/account">
-            <button style={{ height: "32px", lineHeight: "2px", paddingBottom: "70px" }} className="text-[#FFFDE3] px-3 py-1 rounded cursor-pointer bg-transparent-bg text-sm">
+            
+            {/* <button  className="text-[#FFFDE3] px-3 py-1 rounded cursor-pointer  text-sm">
               Account
-</button>
+</button> */}
 
+            <button
+              // style={{ height: "32px", lineHeight: "32px" }}
+              className="text-[#FFFDE3] px-3 py-1 rounded cursor-pointer bg-[#00204a] text-sm"
+            >
+            <Link to="/account" className="text-[#fff]">
+              Account
             </Link>
+            </button>
             <button
               onClick={handleLogOut}
-              style={{ height: "32px", lineHeight: "32px" }}
+              // style={{ height: "32px", lineHeight: "32px" }}
               className="text-[#FFFDE3] px-3 py-1 rounded cursor-pointer bg-[#00204a] text-sm"
             >
               Logout
@@ -98,16 +105,16 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <Link to="/signIn">
               <button className="text-[#FFFDE3] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-500 to-indigo-800 hover:from-purple-600 hover:to-yellow-600 hover:text-black shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+            <Link to="/signIn" className="text-[#fff]">
                 Sign In
-              </button>
             </Link>
-            <Link to="/signUp">
+              </button>
               <button className="text-[#050502] px-6 py-2 rounded cursor-pointer bg-gradient-to-r from-purple-800 to-indigo-500 hover:from-purple-600 hover:to-violet hover:text-white shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+            <Link to="/signUp" className="text-[#fff]">
                 Sign Up
-              </button>
             </Link>
+              </button>
           </>
         )}
       </div>

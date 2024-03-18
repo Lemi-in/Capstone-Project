@@ -119,138 +119,141 @@ const MovieDetails = () => {
       };
     }, []);
 
-  return (
-    <div className="">
-      {showModal ? (
-        <>
-          <div className="justify-center items-center flex overflow-x-hidden 
-              overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto m">
-              {/*content*/}
-              <div className="border-0 rounded-lg shadow-lg relative flex 
-                  flex-col w-full bg-transparent outline-none focus:outline-none">
-                {/*header*/}
-                <div className="flex items-start justify-between border-b p-2 ">
-                  <button
-                    className="p-1 ml-auto bg-transparent border-0 text-white opacity-100  
-                        float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className="bg-transparent text-white opacity-100 
-                         h-6 w-6 text-2xl block outline-none focus:outline-none">
-                      ×
-                    </span>
-                  </button>
-                </div>
-                {/*body*/}
-                <>
-                  <Youtube
-                    videoId={trailer.key}
-                    className="w-[50vh] h-[50vh] md:w-[100vh] md:h-[60vh]"
-                    opts={{
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  />
-                </>
 
-                {/*footer*/}
+    return (
+      <div className="">
+        {showModal ? (
+          <>
+            <div className="justify-center items-center flex overflow-x-hidden 
+                overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+              <div className="relative w-auto my-6 mx-auto m">
+                {/*content*/}
+                <div className="border-0 rounded-lg shadow-lg relative flex 
+                    flex-col w-full bg-transparent outline-none focus:outline-none">
+                  {/*header*/}
+                  <div className="flex items-start justify-between border-b p-2 ">
+                    <button
+                      className="p-1 ml-auto bg-transparent border-0 text-white opacity-100  
+                          float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                      onClick={() => setShowModal(false)}
+                    >
+                      <span className="bg-transparent text-white opacity-100 
+                          h-6 w-6 text-2xl block outline-none focus:outline-none">
+                        ×
+                      </span>
+                    </button>
+                  </div>
+                  {/*body*/}
+                  <>
+                    <Youtube
+                      videoId={trailer.key}
+                      className="w-[50vh] h-[50vh] md:w-[100vh] md:h-[60vh]"
+                      opts={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </>
+
+                  {/*footer*/}
+                </div>
               </div>
             </div>
+            
+
+          </>
+        ) : null}
+
+        <div className="">
+          <div className="absolute w-full md:flex  bg-gradient-to-t from-black ">
           </div>
-          
-
-        </>
-      ) : null}
-
-      <div className="">
-        <div className="absolute w-full md:flex  bg-gradient-to-t from-black ">
+          <img
+            src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path || movieData.poster_path
+              }`}
+            alt=""
+            className="w-full h-50 blur-md object-cover "
+          />
         </div>
-        <img
-          src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path || movieData.poster_path
-            }`}
-          alt=""
-          className="w-full h-50 blur-md object-cover "
-        />
-      </div>
-      <div className="flex justify-center ">
-        <div className="flex flex-col items-center md:flex-row absolute xl:max-w-4xl md:mt-[-360px]  text-white ">
-          <div className=" lg:w-[80%] h-auto md:h-[800px] w-[80%] ">
-            <img
-              className="w-full object-cover rounded-md  "
-              src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
-              alt=""
-            />
-          </div>
-          <div className="float-left  mb-[30%] ml-5 mt-[-200px] ">
-            <p className="text-3xl md:text-xl   md:mb-[1%]">
-              {movieData.title || movieData.original_title}{" "}
-            </p>
-            <div className="flex flex-row items-center ">
-              <div className="flex flex-row justify-center items-center mr-5 pb-2">
-                <AiFillStar className="text-3xl mr-2" />
-                <p className="text-4xl ">
-                  {movieData?.vote_average?.toFixed(1)}{" "}
+        <div className="flex justify-center ">
+          <div className="flex flex-col items-center md:flex-row absolute xl:max-w-4xl md:mt-[-360px]  text-white ">
+            <div className=" lg:w-[80%] h-auto md:h-[800px] w-[80%] ">
+              <img
+                className="w-full object-cover rounded-md  "
+                src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
+                alt=""
+              />
+            </div>
+            <div className="float-left  mb-[30%] ml-5 mt-[-200px] ">
+              <p className="text-3xl md:text-xl   md:mb-[1%]">
+                {movieData.title || movieData.original_title}{" "}
+              </p>
+              <div className="flex flex-row items-center ">
+                <div className="flex flex-row justify-center items-center mr-5 pb-2">
+                  <AiFillStar className="text-3xl mr-2" />
+                  <p className="text-4xl ">
+                    {movieData?.vote_average?.toFixed(1)}{" "}
+                  </p>
+                </div>
+                <div className="flex flex-col">
+                  <div className="grid grid-flow-col auto-cols-max gap-4 ">
+                    <p className="text-sm md:text-base">
+                      Released: {movieData?.release_date}
+                    </p>
+                    <p className="text-sm md:text-base">
+                      {movieData?.runtime} min
+                    </p>
+                  </div>
+
+
+                  <div className="grid grid-flow-col auto-cols-max gap-4 mb-3">
+                    {movieData.genres &&
+                      movieData.genres.slice(0, 5).map((genre, i) => (
+                        <span key={i} className="text-sm  md:text-base">
+                          {genre.name}
+                        </span>
+                      ))}
+                  </div>
+                </div>
+              </div>
+              <div className="backdrop-blur-md">
+              <p className="text-white mb-8 font-mono">{movieData.overview} </p>
+              </div>
+              <div className="flex flex-row items-center ">
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="border text-[#FFFDE3] text-base border-gray-300 py-2 px-5 flex flex-row items-center hover:bg-cyan-600 hover:border-cyan-600 mb-8 md:mb-0"
+                >
+                  <IoMdPlay className="mr-3" />
+                  Watch Trailer
+                </button>
+
+                <p onClick={saveShow} className=" cursor-pointer">
+                  {like ? (
+                    <div className="flex flex-row gap-2">
+                      <FaHeart className="text-gray-300 text-2xl ml-6 mb-8 md:mb-0" />
+                      <p> Added to Favorites!</p>
+                    </div>
+                  ) : (
+                    <div className="flex flex-row gap-2">
+                      <FaRegHeart className="text-gray-300 text-2xl ml-6 mb-8 md:mb-0" />
+                      <p> Add to Favorites</p>
+                    </div>
+                  )}
+                </p>
+                <p>
+                  <GiShare className="text-gray-300 text-2xl ml-3 mb-8 md:mb-0"  onClick={shareMovie}/>
                 </p>
               </div>
-              <div className="flex flex-col">
-                <div className="grid grid-flow-col auto-cols-max gap-4 ">
-                  <p className="text-sm md:text-base">
-                    Released: {movieData?.release_date}
-                  </p>
-                  <p className="text-sm md:text-base">
-                    {movieData?.runtime} min
-                  </p>
-                </div>
-
-                <div className="grid grid-flow-col auto-cols-max gap-4 mb-3">
-                  {movieData.genres &&
-                    movieData.genres.slice(0, 5).map((genre, i) => (
-                      <span key={i} className="text-sm  md:text-base">
-                        {genre.name}
-                      </span>
-                    ))}
-                </div>
-              </div>
             </div>
-            <div className="backdrop-blur-md">
-            <p className="text-white mb-8 font-mono">{movieData.overview} </p>
-            </div>
-            <div className="flex flex-row items-center ">
-              <button
-                onClick={() => setShowModal(true)}
-                className="border text-[#FFFDE3] text-base border-gray-300 py-2 px-5 flex flex-row items-center hover:bg-cyan-600 hover:border-cyan-600 mb-8 md:mb-0"
-              >
-                <IoMdPlay className="mr-3" />
-                Watch Trailer
-              </button>
-
-              <p onClick={saveShow} className=" cursor-pointer">
-                {like ? (
-                  <div className="flex flex-row gap-2">
-                    <FaHeart className="text-gray-300 text-2xl ml-6 mb-8 md:mb-0" />
-                    <p> Added to Favorites!</p>
-                  </div>
-                ) : (
-                  <div className="flex flex-row gap-2">
-                    <FaRegHeart className="text-gray-300 text-2xl ml-6 mb-8 md:mb-0" />
-                    <p> Add to Favorites</p>
-                  </div>
-                )}
-              </p>
-              <p>
-                <GiShare className="text-gray-300 text-2xl ml-3 mb-8 md:mb-0"  onClick={shareMovie}/>
-              </p>
-            </div>
+            <div></div>
           </div>
-          <div></div>
+        </div>
+        <br /><br /><br /><br /><br /> <br />
+        <div className="mt-[380px]">
+        <Row title="Recommendations" className="mt-12 md:d-none py-12" fetchURL={`https://api.themoviedb.org/3/movie/${params.movieId}/recommendations?api_key=d9a2926d310b627aa44739b657eac1e2&language=en-US&page=1`} rowID='1' genre="upcoming" />
         </div>
       </div>
-      <br /><br /><br /><br /><br /> <br />
-      <Row title="Recommendations" className="mt-12 py-12" fetchURL={`https://api.themoviedb.org/3/movie/${params.movieId}/recommendations?api_key=d9a2926d310b627aa44739b657eac1e2&language=en-US&page=1`} rowID='1' genre="upcoming" />
+    );
+  };
 
-    </div>
-  );
-};
-
-export default MovieDetails;
+  export default MovieDetails;
